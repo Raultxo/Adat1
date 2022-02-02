@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sub-Prestamos" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="20" uuid="e040eeb8-3f02-4643-adc1-cf449060d633">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="codigo" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[select * from libros.Historico_prestamo where codigo_libro = $P{codigo}]]>
+	</queryString>
+	<field name="dni_alumno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Historico_prestamo"/>
+	</field>
+	<field name="fecha_prestamo" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Historico_prestamo"/>
+	</field>
+	<field name="fecha_devolucion" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_devolucion"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_devolucion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Historico_prestamo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="515" height="45" backcolor="#CFF2EE" uuid="1e188ea3-62f4-419c-9c72-7515f2d07261">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Dotted" lineColor="#2A9D8F"/>
+					<topPen lineWidth="1.0" lineStyle="Dotted" lineColor="#2A9D8F"/>
+					<leftPen lineWidth="1.0" lineStyle="Dotted" lineColor="#2A9D8F"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#2A9D8F"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted" lineColor="#2A9D8F"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[HISTORIAL DE PRESTAMOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="515" height="30" uuid="8efb8033-5f6c-437e-8a70-42ff9e8010cf"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Pedido por: " + $F{dni_alumno} + " el dia " + new SimpleDateFormat("dd/MM/yyyy").format(new Date($F{fecha_prestamo}.getTime())) + " y devuelto el dia " + new SimpleDateFormat("dd/MM/yyyy").format(new Date($F{fecha_devolucion}.getTime()))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="30" width="515" height="1" uuid="c11a0622-5941-43c6-b499-0dd3e323de57">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

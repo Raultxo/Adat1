@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Estadisticas" pageWidth="842" pageHeight="555" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40bd7a83-66a9-41ec-906b-cfe6a7a69283">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="subInforme1" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subInforme2" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subInforme3" class="net.sf.jasperreports.engine.JasperReport"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Alumno limit 1]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="80">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="80" backcolor="#2A9D8F" uuid="6d6b4b58-20c9-49d8-b8bd-871f9c926e85">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[ESTADISTICAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="0fd1f717-f4ea-4f12-bc4e-b82290972f82">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["src/imagenes/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="420">
+			<subreport>
+				<reportElement x="20" y="10" width="760" height="400" uuid="e9a89ac8-38fe-453b-9a15-85d55d489b03">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subInforme1}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="420">
+			<subreport>
+				<reportElement x="20" y="10" width="760" height="400" uuid="e48324f2-4756-4b1c-983c-e55627918c59">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subInforme2}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="420">
+			<subreport>
+				<reportElement x="20" y="10" width="760" height="400" uuid="e9a89ac8-38fe-453b-9a15-85d55d489b03">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subInforme3}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Prestamo" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb5fa2d5-eade-4a6a-8438-5572a7303c6d">
+	<property name="com.jaspersoft.studio.data.sql.tables"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="UltimoPrestamo" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM Prestamo, Alumno, Libro 
+		WHERE Prestamo.id_prestamo = $P{UltimoPrestamo} 
+		AND Prestamo.dni_alumno = Alumno.dni 
+		AND Prestamo.codigo_libro = Libro.codigo]]>
+	</queryString>
+	<field name="id_prestamo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_prestamo"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_prestamo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Prestamo"/>
+	</field>
+	<field name="dni_alumno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni_alumno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Prestamo"/>
+	</field>
+	<field name="codigo_libro" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codigo_libro"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo_libro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Prestamo"/>
+	</field>
+	<field name="fecha_prestamo" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_prestamo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Prestamo"/>
+	</field>
+	<field name="dni" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Alumno"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Alumno"/>
+	</field>
+	<field name="apellido1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Alumno"/>
+	</field>
+	<field name="apellido2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Alumno"/>
+	</field>
+	<field name="codigo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<field name="Titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Titulo"/>
+		<property name="com.jaspersoft.studio.field.label" value="Titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<field name="Autor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Autor"/>
+		<property name="com.jaspersoft.studio.field.label" value="Autor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<field name="Editorial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Editorial"/>
+		<property name="com.jaspersoft.studio.field.label" value="Editorial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Estado"/>
+		<property name="com.jaspersoft.studio.field.label" value="Estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<field name="Baja" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Baja"/>
+		<property name="com.jaspersoft.studio.field.label" value="Baja"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Libro"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="80" backcolor="#2A9D8F" uuid="8673ed5a-243d-46ad-ad4e-28132d476e53">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[PRÉSTAMO DE LIBRO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="24dfb9f2-1c9e-42e7-bc06-7b88ea4f0f7b"/>
+				<imageExpression><![CDATA["src/imagenes/logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="220" splitType="Stretch">
+			<textField>
+				<reportElement x="150" y="5" width="160" height="30" uuid="e1da672b-a60a-4866-ac0b-dcb6315b736b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dni_alumno}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="35" width="310" height="30" uuid="2c81afb3-4771-4d89-9f6c-3a5a25596c8c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre} + " " + $F{apellido1} + " " + $F{apellido2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="5" width="252" height="30" uuid="da20ad19-90be-418a-a304-cec6c0ea12cb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="35" width="252" height="30" uuid="4c3bbafe-7747-4c5f-80cc-23eb90674690"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="65" width="252" height="30" uuid="6380f9d5-f2a0-4548-b598-443ca76a1c9c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Autor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="95" width="252" height="30" uuid="9b8d6a1e-a016-44b3-bd38-65b59de543fc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Editorial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="125" width="252" height="30" uuid="7a97aa72-63e8-4028-935c-4a5cacc9b721"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+			<image vAlign="Middle">
+				<reportElement x="314" y="5" width="110" height="150" uuid="fe20ded3-3557-44d7-b57b-888126619d47"/>
+				<imageExpression><![CDATA["src/imagenes/alumno.png"]]></imageExpression>
+			</image>
+			<image vAlign="Middle">
+				<reportElement x="436" y="5" width="110" height="150" uuid="a2506e4e-9021-402c-b822-5ad1e8868e9a"/>
+				<imageExpression><![CDATA["src/imagenes/libroInforme.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="220" y="160" width="400" height="50" backcolor="#CFF2EE" uuid="2e3b7076-758a-407c-9c24-1c69a336b758"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#2A9D8F"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="230" y="170" width="189" height="30" uuid="4a1e2628-1a89-4a4e-aed0-18fd17180859"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Fecha del préstamo: " + new SimpleDateFormat("dd/MM/yyyy").format(new Date($F{fecha_prestamo}.getTime()))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="170" width="161" height="30" uuid="45267aad-f17f-4129-91b4-afecf0d67f3b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Fecha límite: " + new SimpleDateFormat("dd/MM/yyyy").format(new Date($F{fecha_prestamo}.getTime() + (15 * 24 * 60 * 60 * 1000)))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement mode="Opaque" x="429" y="0" width="1" height="160" forecolor="#2A9D8F" backcolor="#2A9D8F" uuid="8faee449-dec0-4285-8774-d621d2368ce6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement mode="Opaque" x="430" y="0" width="1" height="160" forecolor="#2A9D8F" backcolor="#2A9D8F" uuid="e6bc13b1-988a-4b97-a265-b558148386d7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</pageHeader>
+</jasperReport>
